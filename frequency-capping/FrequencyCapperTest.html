@@ -1,0 +1,31 @@
+<html>
+<head>
+<script src="FrequencyCapper.js"></script>
+</head>
+<body>
+<script>
+
+window.localStorage.clear();
+
+var fc = new FrequencyCapper();
+
+for(var i = 0; i < 5; i++)
+	fc.recordImpression('ad_1');
+
+var uncapped = fc.getUncapped(
+	[
+		{
+			"id": "ad_1",
+			"cap": 5
+		},
+		{
+			"id": "ad_2",
+			"cap": 10
+		}
+	], 1);
+	
+document.body.innerHTML = uncapped;
+
+</script>
+</body>
+</html>
