@@ -1,0 +1,31 @@
+<html>
+<head>
+<script src="BehavioralTargeter.js"></script>
+</head>
+<body>
+<script>
+
+window.localStorage.clear();
+
+var bt = new BehavioralTargeter();
+
+bt.recordVisit('cars.com');
+bt.recordVisit('foodnetwork.com');
+
+var targeted = bt.getTargeted(
+	[
+		{
+			'id': 'travel_ad',
+			'interests': ['travel', 'vacation']
+		},
+		{
+			'id': 'restaurant_ad',
+			'interests': ['restaurants', 'cooking']
+		}
+	], 1);
+	
+document.body.innerHTML = targeted;
+
+</script>
+</body>
+</html>
