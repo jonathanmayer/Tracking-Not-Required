@@ -1,0 +1,24 @@
+<html>
+<head>
+<script src="ConversionMeasure.js"></script>
+</head>
+<body>
+<script>
+
+window.localStorage.clear();
+
+var cm = new ConversionMeasure();
+
+cm.recordImpression('ford-fusion-hybrid-campaign-1', 'http://wheels.blogs.nytimes.com/2012/01/09/ford-adds-plug-in-hybrid-to-fusion-arsenal/', new Date());
+cm.recordImpression('ford-fusion-hybrid-campaign-1', 'http://www.nytimes.com/2009/06/21/automobiles/autoreviews/21fusion-hybrid.html', new Date());
+cm.recordImpression('ford-fusion-hybrid-campaign-1', 'http://wheels.blogs.nytimes.com/2009/04/02/ford-fusion-hybrids-smartgauge-display/', new Date());
+cm.recordImpression('ford-fusion-hybrid-campaign-2', 'http://www.nytimes.com/slideshow/2009/06/21/automobiles/autoreviews/0621-fusion_index.html', new Date());
+cm.recordImpression('ford-fusion-hybrid-campaign-1', 'http://www.cars.com/ford/fusion-hybrid/2013/expert-reviews/?revid=58184', new Date());
+cm.recordImpression('ford-fusion-hybrid-campaign-2', 'http://www.motortrend.com/roadtests/sedans/1201_2013_ford_fusion_first_look/viewall.html', new Date());
+cm.recordImpression('ford-fusion-hybrid-campaign-1', 'http://www.edmunds.com/ford/fusion/2012/', new Date());
+
+document.body.innerHTML = JSON.stringify(cm.getImpressionsForConversion('ford-fusion-hybrid-campaign-1')) + "<br/><br/>" + JSON.stringify(cm.getImpressionsForConversion('ford-fusion-hybrid-campaign-2'));
+
+</script>
+</body>
+</html>
